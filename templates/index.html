@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crop Prediction</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #e8f5e9;
+            text-align: center;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+        input {
+            margin: 5px;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h2>🌾 Crop Prediction System 🌾</h2>
+    <form action="/predict" method="post">
+        <input type="text" name="N" placeholder="Nitrogen"><br>
+        <input type="text" name="P" placeholder="Phosphorus"><br>
+        <input type="text" name="K" placeholder="Potassium"><br>
+        <input type="text" name="temperature" placeholder="Temperature"><br>
+        <input type="text" name="humidity" placeholder="Humidity"><br>
+        <input type="text" name="ph" placeholder="pH"><br>
+        <input type="text" name="rainfall" placeholder="Rainfall"><br>
+        <button type="submit">Predict Crop</button>
+    </form>
+
+    {% if prediction %}
+        <h3>🌱 Recommended Crop: {{ prediction }}</h3>
+    {% endif %}
+</body>
+</html>
